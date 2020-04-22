@@ -9,12 +9,16 @@
 /* Begin PBXBuildFile section */
 		0C0665E42443123300EB6E2A /* ArgumentParser in Frameworks */ = {isa = PBXBuildFile; productRef = 0C0665E32443123300EB6E2A /* ArgumentParser */; };
 		0C6FF14F24430B2B008DD4F6 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6FF14E24430B2B008DD4F6 /* main.swift */; };
+		0C9A44FB244F01E500DC31E7 /* Exporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9A44FA244F01E500DC31E7 /* Exporter.swift */; };
+		0CB4DCAB2450063100B51AE4 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB4DCAA2450063100B51AE4 /* Utils.swift */; };
 		0CE3C8E1244D7595005E3591 /* Logging in Frameworks */ = {isa = PBXBuildFile; productRef = 0CE3C8E0244D7595005E3591 /* Logging */; };
 		0CFC2AE0244EB71F00DE85DD /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFC2ADF244EB71F00DE85DD /* Loader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0C6FF14E24430B2B008DD4F6 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		0C9A44FA244F01E500DC31E7 /* Exporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exporter.swift; sourceTree = "<group>"; };
+		0CB4DCAA2450063100B51AE4 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		0CFC2ADF244EB71F00DE85DD /* Loader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
 		E1E43AF2217CDABA000E76DF /* export-photo-library.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "export-photo-library.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1E43AFC217CDABA000E76DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -55,6 +59,8 @@
 				0CFC2ADF244EB71F00DE85DD /* Loader.swift */,
 				E1E43AFC217CDABA000E76DF /* Info.plist */,
 				0C6FF14E24430B2B008DD4F6 /* main.swift */,
+				0C9A44FA244F01E500DC31E7 /* Exporter.swift */,
+				0CB4DCAA2450063100B51AE4 /* Utils.swift */,
 			);
 			path = "export-photo-library";
 			sourceTree = "<group>";
@@ -142,7 +148,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C6FF14F24430B2B008DD4F6 /* main.swift in Sources */,
+				0C9A44FB244F01E500DC31E7 /* Exporter.swift in Sources */,
 				0CFC2AE0244EB71F00DE85DD /* Loader.swift in Sources */,
+				0CB4DCAB2450063100B51AE4 /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

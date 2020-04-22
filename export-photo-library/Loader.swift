@@ -64,7 +64,7 @@ class Loader: NSObject {
         MLMediaLoadIncludeSourcesKey: [MLMediaSourcePhotosIdentifier],
     ])
 
-    private var logger = Logger(label: "life.memorize.export-photo-library")
+    private var logger: Logger
 
     private var mustStop = false
     private var groupsToLoad: UInt = 0
@@ -73,11 +73,11 @@ class Loader: NSObject {
     private var source: MLMediaSource!
     private var root: MLMediaGroup!
 
-    func load(verbose: Bool = true) throws -> MLMediaGroup {
-        if verbose {
-            logger.logLevel = Logger.Level.debug
-        }
+    init(using logger: Logger) {
+        self.logger = logger
+    }
 
+    func load() throws -> MLMediaGroup {
         logger.debug("Observe media sources of \(library)")
         library.addObserver(
             self,
@@ -137,7 +137,7 @@ class Loader: NSObject {
     private func loadObjects(for group: MLMediaGroup) {
         groupsToLoad += 1
 
-        let groupName = "\"\(group.name ?? group.identifier)\""
+        let groupName = "\"\(nameOf(group))\""
         logger.debug("Observe media objects of \(groupName)")
         group.addObserver(
             self,
@@ -187,7 +187,7 @@ class Loader: NSObject {
         if keyPath == LibraryKeys.mediaObjects {
             let group = object as! MLMediaGroup
 
-            logger.debug("Done observing media objects of \"\(group.name ?? group.identifier)\"")
+            logger.debug("Done observing media objects of \"\(nameOf(group))\"")
             group.removeObserver(self, forKeyPath: LibraryKeys.mediaObjects)
 
             groupsToLoad -= 1

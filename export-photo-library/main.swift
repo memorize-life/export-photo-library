@@ -18,8 +18,8 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-
 import ArgumentParser
+import Logging
 
 struct ExportCommand: ParsableCommand {
     static let configuration = CommandConfiguration(
@@ -31,7 +31,14 @@ struct ExportCommand: ParsableCommand {
     var destination: String
 
     func run() throws {
-        try Loader().load()
+        var logger = Logger(label: "life.memorize.export-photo-library")
+        logger.logLevel = Logger.Level.debug
+
+        let loader = Loader(using: logger)
+        let root = try loader.load()
+
+        let exporter = Exporter(using: logger)
+        try exporter.export(from: root, to: destination)
     }
 }
 
